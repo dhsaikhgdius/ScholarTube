@@ -1,0 +1,40 @@
+{
+  "generatedOn": "2026-08-24",
+  "baseCommit": "6b8fb8f6b09f9d6e1cb888e98d9478e47bb76b63",
+  "remoteResources": 942,
+  "localResources": 631,
+  "sharedResources": 547,
+  "removedFromRemote": [
+    {
+      "id": "ST-652",
+      "title": "A Path Towards Autonomous Machine Intelligence with Dr. Yann LeCun",
+      "platform": "YouTube",
+      "videoId": "EvSe0ktD95k"
+    }
+  ],
+  "appendedResources": 84,
+  "appendedIdRange": [
+    "ST-943",
+    "ST-1026"
+  ],
+  "finalResources": 1025,
+  "finalBySection": {
+    "Course": 483,
+    "Interview": 189,
+    "Talk": 353
+  },
+  "finalByFocusArea": {
+    "Agent": 201,
+    "How to Research": 30,
+    "Other": 378,
+    "Robotics": 198,
+    "Vision": 127,
+    "World Model": 91
+  },
+  "finalByPlatform": {
+    "Bilibili": 195,
+    "Conference Site": 84,
+    "Official Site": 13,
+    "YouTube": 733
+  }
+}

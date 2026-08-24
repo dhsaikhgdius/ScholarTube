@@ -67,6 +67,18 @@ const mitUnderactuatedSpring2024 = orderedVideoIds([
 
 const courseSeriesDefinitions = [
   {
+    id: 'baai-conference-2026',
+    title: 'Beijing Academy of Artificial Intelligence Conference — 2026',
+    test: (resource) => resource.channel === '智源社区' && /2026北京智源大会/i.test(resource.title),
+    order: publishedOrder,
+  },
+  {
+    id: 'zhang-xiaojun-business-interviews',
+    title: '张小珺商业访谈录',
+    test: (resource) => resource.channel === '张小珺商业访谈录',
+    order: publishedOrder,
+  },
+  {
     id: 'stanford-cs229-autumn-2018',
     title: 'Stanford CS229: Machine Learning — Autumn 2018',
     test: (resource) => /stanford cs229/i.test(resource.title) && /autumn 2018/i.test(resource.title),
@@ -364,6 +376,7 @@ for (const resource of resources) {
 
 const updated = resources.map((resource) => {
   const series = assignments.get(resource.id)
+  if (!series) return resource
   const { seriesId: _oldId, seriesTitle: _oldTitle, seriesOrder: _oldOrder, ...base } = resource
   return {
     ...base,
@@ -373,10 +386,16 @@ const updated = resources.map((resource) => {
   }
 })
 
-const seriesSummary = seriesDefinitions.map((definition) => {
-  const members = updated.filter((resource) => resource.seriesId === definition.id)
-  if (members.length < 2) throw new Error(`${definition.id} has only ${members.length} matching resource(s)`)
-  return { id: definition.id, title: definition.title, section: definition.section, resources: members.length }
+const seriesSummary = [...new Set(updated.map((resource) => resource.seriesId).filter(Boolean))].map((id) => {
+  const members = updated.filter((resource) => resource.seriesId === id)
+  if (members.length < 2) throw new Error(`${id} has only ${members.length} matching resource(s)`)
+  const sections = [...new Set(members.map((resource) => resource.section))]
+  return {
+    id,
+    title: members[0].seriesTitle,
+    section: sections.length === 1 ? sections[0] : 'Mixed',
+    resources: members.length,
+  }
 })
 
 const fields = Object.keys(updated[0])

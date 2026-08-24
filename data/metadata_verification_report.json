@@ -1,34 +1,617 @@
 {
-  "verifiedOn": "2026-08-17",
-  "total": 942,
-  "verified": 226,
-  "partial": 716,
-  "failed": 0,
+  "verifiedOn": "2026-08-24",
+  "total": 1025,
+  "verified": 195,
+  "partial": 733,
+  "failed": 97,
   "byPlatform": {
     "YouTube": {
-      "total": 706,
+      "total": 733,
       "verified": 0,
-      "partial": 706,
+      "partial": 733,
       "failed": 0
     },
     "Bilibili": {
-      "total": 139,
-      "verified": 139,
+      "total": 195,
+      "verified": 195,
       "partial": 0,
       "failed": 0
     },
     "Conference Site": {
       "total": 84,
-      "verified": 84,
+      "verified": 0,
       "partial": 0,
-      "failed": 0
+      "failed": 84
     },
     "Official Site": {
       "total": 13,
-      "verified": 3,
-      "partial": 10,
-      "failed": 0
+      "verified": 0,
+      "partial": 0,
+      "failed": 13
     }
   },
-  "failures": []
+  "failures": [
+    {
+      "id": "ST-774",
+      "platform": "Conference Site",
+      "url": "https://neurips.cc/virtual/2025/invited-talk/109601",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-775",
+      "platform": "Conference Site",
+      "url": "https://neurips.cc/virtual/2025/invited-talk/109606",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-776",
+      "platform": "Conference Site",
+      "url": "https://neurips.cc/virtual/2025/invited-talk/109603",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-777",
+      "platform": "Conference Site",
+      "url": "https://neurips.cc/virtual/2025/invited-talk/109607",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-778",
+      "platform": "Conference Site",
+      "url": "https://neurips.cc/virtual/2025/invited-talk/109605",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-779",
+      "platform": "Conference Site",
+      "url": "https://neurips.cc/virtual/2025/invited-talk/109602",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-780",
+      "platform": "Conference Site",
+      "url": "https://neurips.cc/virtual/2025/test-of-time/128328",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-781",
+      "platform": "Conference Site",
+      "url": "https://neurips.cc/virtual/2025/109599",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-782",
+      "platform": "Conference Site",
+      "url": "https://neurips.cc/virtual/2025/109588",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-783",
+      "platform": "Conference Site",
+      "url": "https://neurips.cc/virtual/2025/109598",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-784",
+      "platform": "Conference Site",
+      "url": "https://neurips.cc/virtual/2025/tutorial/109587",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-785",
+      "platform": "Conference Site",
+      "url": "https://neurips.cc/virtual/2025/tutorial/109597",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-786",
+      "platform": "Conference Site",
+      "url": "https://neurips.cc/virtual/2025/109596",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-787",
+      "platform": "Conference Site",
+      "url": "https://neurips.cc/virtual/2025/109592",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-788",
+      "platform": "Conference Site",
+      "url": "https://neurips.cc/virtual/2025/tutorial/109589",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-789",
+      "platform": "Conference Site",
+      "url": "https://mlsys.org/virtual/2025/2886",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-790",
+      "platform": "Conference Site",
+      "url": "https://mlsys.org/virtual/2025/3013",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-791",
+      "platform": "Conference Site",
+      "url": "https://mlsys.org/virtual/2025/2887",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-792",
+      "platform": "Conference Site",
+      "url": "https://mlsys.org/virtual/2025/3012",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-793",
+      "platform": "Conference Site",
+      "url": "https://neurips.cc/virtual/2025/136232",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-794",
+      "platform": "Conference Site",
+      "url": "https://neurips.cc/virtual/2025/136233",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-795",
+      "platform": "Conference Site",
+      "url": "https://neurips.cc/virtual/2025/136235",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-796",
+      "platform": "Conference Site",
+      "url": "https://neurips.cc/virtual/2025/131810",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-797",
+      "platform": "Conference Site",
+      "url": "https://neurips.cc/virtual/2025/130646",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-798",
+      "platform": "Conference Site",
+      "url": "https://neurips.cc/virtual/2025/136287",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-799",
+      "platform": "Conference Site",
+      "url": "https://iclr.cc/virtual/2025/invited-talk/36782",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-800",
+      "platform": "Conference Site",
+      "url": "https://iclr.cc/virtual/2025/invited-talk/36781",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-801",
+      "platform": "Conference Site",
+      "url": "https://iclr.cc/virtual/2025/invited-talk/36785",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-802",
+      "platform": "Conference Site",
+      "url": "https://iclr.cc/virtual/2025/invited-talk/36783",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-803",
+      "platform": "Conference Site",
+      "url": "https://iclr.cc/virtual/2025/invited-talk/36784",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-804",
+      "platform": "Conference Site",
+      "url": "https://iclr.cc/virtual/2025/invited-talk/36780",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-805",
+      "platform": "Conference Site",
+      "url": "https://icml.cc/virtual/2025/invited-talk/39862",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-806",
+      "platform": "Conference Site",
+      "url": "https://icml.cc/virtual/2025/invited-talk/39865",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-807",
+      "platform": "Conference Site",
+      "url": "https://icml.cc/virtual/2025/invited-talk/39871",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-808",
+      "platform": "Conference Site",
+      "url": "https://icml.cc/virtual/2025/invited-talk/39874",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-809",
+      "platform": "Conference Site",
+      "url": "https://icml.cc/virtual/2025/invited-talk/39878",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-810",
+      "platform": "Conference Site",
+      "url": "https://neurips.cc/virtual/2024/invited-talk/101128",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-811",
+      "platform": "Conference Site",
+      "url": "https://neurips.cc/virtual/2024/invited-talk/101129",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-812",
+      "platform": "Conference Site",
+      "url": "https://neurips.cc/virtual/2024/invited-talk/101127",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-813",
+      "platform": "Conference Site",
+      "url": "https://neurips.cc/virtual/2024/invited-talk/101132",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-814",
+      "platform": "Conference Site",
+      "url": "https://neurips.cc/virtual/2024/invited-talk/101133",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-815",
+      "platform": "Conference Site",
+      "url": "https://neurips.cc/virtual/2024/invited-talk/101131",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-816",
+      "platform": "Conference Site",
+      "url": "https://neurips.cc/virtual/2024/invited-talk/101130",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-817",
+      "platform": "Conference Site",
+      "url": "https://mlsys.org/virtual/2024/invited-talk/2592",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-818",
+      "platform": "Conference Site",
+      "url": "https://mlsys.org/virtual/2024/invited-talk/2590",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-819",
+      "platform": "Conference Site",
+      "url": "https://mlsys.org/virtual/2024/invited-talk/2593",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-820",
+      "platform": "Conference Site",
+      "url": "https://mlsys.org/virtual/2024/invited-talk/2668",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-821",
+      "platform": "Conference Site",
+      "url": "https://iclr.cc/virtual/2024/invited-talk/21797",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-822",
+      "platform": "Conference Site",
+      "url": "https://iclr.cc/virtual/2024/invited-talk/21804",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-823",
+      "platform": "Conference Site",
+      "url": "https://iclr.cc/virtual/2024/invited-talk/21798",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-824",
+      "platform": "Conference Site",
+      "url": "https://iclr.cc/virtual/2024/invited-talk/21803",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-825",
+      "platform": "Conference Site",
+      "url": "https://iclr.cc/virtual/2024/invited-talk/21802",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-826",
+      "platform": "Conference Site",
+      "url": "https://iclr.cc/virtual/2024/invited-talk/21799",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-827",
+      "platform": "Conference Site",
+      "url": "https://iclr.cc/virtual/2024/invited-talk/21801",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-828",
+      "platform": "Conference Site",
+      "url": "https://icml.cc/virtual/2024/invited-talk/35249",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-829",
+      "platform": "Conference Site",
+      "url": "https://icml.cc/virtual/2024/invited-talk/35667",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-830",
+      "platform": "Conference Site",
+      "url": "https://icml.cc/virtual/2024/invited-talk/35251",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-831",
+      "platform": "Conference Site",
+      "url": "https://icml.cc/virtual/2024/invited-talk/35254",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-832",
+      "platform": "Conference Site",
+      "url": "https://icml.cc/virtual/2024/invited-talk/35253",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-833",
+      "platform": "Conference Site",
+      "url": "https://cvpr.thecvf.com/virtual/2025/invited-talk/35402",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-834",
+      "platform": "Conference Site",
+      "url": "https://cvpr.thecvf.com/virtual/2025/invited-talk/35403",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-835",
+      "platform": "Conference Site",
+      "url": "https://cvpr.thecvf.com/virtual/2025/invited-talk/35404",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-836",
+      "platform": "Conference Site",
+      "url": "https://iccv.thecvf.com/virtual/2025/invited-talk/2718",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-837",
+      "platform": "Conference Site",
+      "url": "https://iccv.thecvf.com/virtual/2025/invited-talk/2719",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-838",
+      "platform": "Conference Site",
+      "url": "https://iccv.thecvf.com/virtual/2025/invited-talk/2720",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-839",
+      "platform": "Conference Site",
+      "url": "https://cvpr.thecvf.com/virtual/2024/invited-talk/32077",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-840",
+      "platform": "Conference Site",
+      "url": "https://cvpr.thecvf.com/virtual/2024/invited-talk/32078",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-841",
+      "platform": "Conference Site",
+      "url": "https://cvpr.thecvf.com/virtual/2024/invited-talk/32079",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-842",
+      "platform": "Conference Site",
+      "url": "https://eccv.ecva.net/virtual/2024/invited-talk/2703",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-843",
+      "platform": "Conference Site",
+      "url": "https://eccv.ecva.net/virtual/2024/invited-talk/2702",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-844",
+      "platform": "Conference Site",
+      "url": "https://eccv.ecva.net/virtual/2024/invited-talk/2701",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-845",
+      "platform": "Conference Site",
+      "url": "https://icml.cc/virtual/2023/invited-talk/21544",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-846",
+      "platform": "Conference Site",
+      "url": "https://icml.cc/virtual/2023/invited-talk/21547",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-847",
+      "platform": "Conference Site",
+      "url": "https://icml.cc/virtual/2023/invited-talk/21546",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-848",
+      "platform": "Conference Site",
+      "url": "https://icml.cc/virtual/2023/invited-talk/21549",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-849",
+      "platform": "Conference Site",
+      "url": "https://neurips.cc/virtual/2023/invited-talk/73988",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-850",
+      "platform": "Conference Site",
+      "url": "https://neurips.cc/virtual/2023/invited-talk/73993",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-851",
+      "platform": "Conference Site",
+      "url": "https://neurips.cc/virtual/2023/invited-talk/73992",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-852",
+      "platform": "Conference Site",
+      "url": "https://neurips.cc/virtual/2023/invited-talk/73987",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-853",
+      "platform": "Conference Site",
+      "url": "https://neurips.cc/virtual/2023/invited-talk/73994",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-854",
+      "platform": "Conference Site",
+      "url": "https://neurips.cc/virtual/2023/invited-talk/73990",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-855",
+      "platform": "Conference Site",
+      "url": "https://neurips.cc/virtual/2023/invited-talk/73989",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-856",
+      "platform": "Conference Site",
+      "url": "https://mlsys.org/virtual/2023/invited-talk/2482",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-857",
+      "platform": "Conference Site",
+      "url": "https://mlsys.org/virtual/2023/invited-talk/2483",
+      "error": "Unsupported platform: Conference Site"
+    },
+    {
+      "id": "ST-883",
+      "platform": "Official Site",
+      "url": "https://www.nature.com/masterclasses/focus-peer-review/52042152",
+      "error": "Unsupported platform: Official Site"
+    },
+    {
+      "id": "ST-884",
+      "platform": "Official Site",
+      "url": "https://media.tuwien.ac.at/scientific-research-and-writing-for-computer-scientists/",
+      "error": "Unsupported platform: Official Site"
+    },
+    {
+      "id": "ST-885",
+      "platform": "Official Site",
+      "url": "https://www.lib.ncsu.edu/videos/picking-your-topic-is-research",
+      "error": "Unsupported platform: Official Site"
+    },
+    {
+      "id": "ST-886",
+      "platform": "Official Site",
+      "url": "https://www.lib.ncsu.edu/videos/searching-google-scholar",
+      "error": "Unsupported platform: Official Site"
+    },
+    {
+      "id": "ST-887",
+      "platform": "Official Site",
+      "url": "https://www.lib.ncsu.edu/videos/how-read-scholarly-article",
+      "error": "Unsupported platform: Official Site"
+    },
+    {
+      "id": "ST-888",
+      "platform": "Official Site",
+      "url": "https://www.lib.ncsu.edu/videos/literature-reviews-overview-graduate-students",
+      "error": "Unsupported platform: Official Site"
+    },
+    {
+      "id": "ST-889",
+      "platform": "Official Site",
+      "url": "https://ocw.mit.edu/courses/14-310x-data-analysis-for-social-scientists-spring-2023/resources/14310x-lecture-22_mp4/",
+      "error": "Unsupported platform: Official Site"
+    },
+    {
+      "id": "ST-893",
+      "platform": "Official Site",
+      "url": "https://www.nobelprize.org/prizes/physics/2024/hinton/lecture/",
+      "error": "Unsupported platform: Official Site"
+    },
+    {
+      "id": "ST-894",
+      "platform": "Official Site",
+      "url": "https://www.nobelprize.org/prizes/physics/2024/hopfield/lecture/",
+      "error": "Unsupported platform: Official Site"
+    },
+    {
+      "id": "ST-895",
+      "platform": "Official Site",
+      "url": "https://www.nobelprize.org/prizes/chemistry/2024/hassabis/lecture/",
+      "error": "Unsupported platform: Official Site"
+    },
+    {
+      "id": "ST-896",
+      "platform": "Official Site",
+      "url": "https://www.nobelprize.org/prizes/chemistry/2024/jumper/lecture/",
+      "error": "Unsupported platform: Official Site"
+    },
+    {
+      "id": "ST-897",
+      "platform": "Official Site",
+      "url": "https://www.nobelprize.org/prizes/chemistry/2024/baker/lecture/",
+      "error": "Unsupported platform: Official Site"
+    },
+    {
+      "id": "ST-901",
+      "platform": "Official Site",
+      "url": "https://media.mis.mpg.de/conference-ei-2013/2013-03-01-schmidhuber/",
+      "error": "Unsupported platform: Official Site"
+    }
+  ]
 }

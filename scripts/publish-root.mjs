@@ -4,7 +4,17 @@ import { resolve } from 'node:path'
 const projectRoot = resolve(import.meta.dirname, '..')
 const distRoot = resolve(projectRoot, 'dist')
 const publishedAssets = resolve(projectRoot, 'assets')
-const distHtml = await readFile(resolve(distRoot, 'index.html'), 'utf8')
+const preservedAssets = await Promise.all(['scholartube_new.png'].map(async (name) => ({
+  name,
+  contents: await readFile(resolve(publishedAssets, name)).catch(() => null),
+})))
+const distHtmlPath = resolve(distRoot, 'index.html')
+const rawDistHtml = await readFile(distHtmlPath, 'utf8')
+const distHtml = rawDistHtml
+  .replaceAll('\r\n', '\n')
+  .replaceAll('\r', '\n')
+  .replace('\n\n  </body>', '\n  </body>')
+if (distHtml !== rawDistHtml) await writeFile(distHtmlPath, distHtml)
 const cssPath = distHtml.match(/href="\.\/assets\/([^"]+\.css)"/)?.[1]
 const scriptPath = distHtml.match(/src="\.\/assets\/([^"]+\.js)"/)?.[1]
 
@@ -39,6 +49,9 @@ const standaloneHtml = `<!doctype html>
 await rm(publishedAssets, { recursive: true, force: true })
 await mkdir(publishedAssets, { recursive: true })
 await cp(resolve(projectRoot, 'public', 'assets'), publishedAssets, { recursive: true })
+for (const asset of preservedAssets) {
+  if (asset.contents) await writeFile(resolve(publishedAssets, asset.name), asset.contents)
+}
 await writeFile(resolve(projectRoot, 'index.html'), standaloneHtml)
 
 console.log('Published a standalone index.html and its image assets to the project root.')
