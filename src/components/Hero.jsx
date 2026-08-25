@@ -11,8 +11,9 @@ export default function Hero({ children, resources }) {
         <div className="hero-copy">
           <h1>Watch the ideas shaping intelligent systems.</h1>
           <p className="hero-description">
-            A curated video index for researchers—source-linked interviews,
-            long-form podcasts, complete courses, and talks worth returning to.
+            A hand-curated video index for AI researchers: source-linked interviews,
+            long-form podcasts, complete course runs, and talks that stay useful long
+            after the release cycle.
           </p>
           <div className="hero-actions">
             <a className="button button--primary" href="#library">

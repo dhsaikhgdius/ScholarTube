@@ -8,37 +8,37 @@ const directionDefinitions = [
     id: 'World Model',
     number: '01',
     label: 'World Models',
-    copy: 'Learned simulators that predict how environments evolve — temporal dynamics, latent imagination, planning, and spatial reasoning.',
+    copy: 'Learned simulators and generative video — Genie, Dreamer, driving world models — plus the spatial reasoning needed to plan inside a prediction.',
   },
   {
     id: 'Agent',
     number: '02',
     label: 'Agents',
-    copy: 'Systems that act on their own: tool use, memory, orchestration, multi-agent coordination, and rigorous agent evaluation.',
+    copy: 'How language models become systems that act: post-training, tool use, retrieval, planning, multi-agent coordination, and honest evaluation.',
   },
   {
     id: 'Vision',
     number: '03',
     label: 'Vision',
-    copy: 'Perception and generation across images and video — multimodal understanding, visual representation, and generative systems.',
+    copy: 'Perception from pixels to 3D and video understanding, and the vision–language models that connect what a system sees to what it knows.',
   },
   {
     id: 'Robotics',
     number: '04',
     label: 'Robotics',
-    copy: 'Embodied intelligence: manipulation, locomotion, sim-to-real transfer, and policies that turn perception into grounded action.',
+    copy: 'Reinforcement and imitation learning, manipulation, humanoids, and vision-language-action models: perception becoming reliable physical behaviour.',
   },
   {
     id: 'Other',
     number: '05',
     label: 'Broader AI',
-    copy: 'The wider field: deep learning foundations, AI systems and infrastructure, NLP, industry perspectives, social impact, and research frontiers.',
+    copy: 'The base layer: mathematics, classic courses, ML systems, NLP, and the interviews that explain where the field is actually heading.',
   },
   {
     id: 'How to Research',
     number: '06',
     label: 'How to Research',
-    copy: 'The craft of research: finding problems, reading literature, experimental rigor, scientific writing, peer review, and clear communication.',
+    copy: 'The craft itself: finding problems worth years, reading and writing papers, surviving peer review, and giving talks people remember.',
   },
 ]
 
@@ -67,7 +67,7 @@ export default function Directions({ setFocus, resources }) {
             <p className="section-kicker">Research directions</p>
             <h2>Enter through the question you’re working on.</h2>
           </div>
-          <p>Six directions connect field knowledge with the craft of doing careful, communicable research.</p>
+          <p>Each direction filters the index down to the interviews, courses, and talks that serve it — with the research craft itself as a first-class direction.</p>
         </div>
 
         <div className="direction-list">
