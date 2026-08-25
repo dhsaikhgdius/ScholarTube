@@ -8,6 +8,7 @@
     "build": "vite build --base=./ && node scripts/publish-root.mjs",
     "preview": "vite preview",
     "podcasts:apply": "node scripts/add-quality-podcasts-2026-08-25.mjs",
+    "courses:complete": "node scripts/add-official-course-completions-2026-08-25.mjs",
     "series:apply": "node scripts/apply-course-series.mjs",
     "taxonomy:apply": "node scripts/apply-taxonomy-fixes.mjs",
     "notes:apply": "node scripts/apply-editorial-notes.mjs",
