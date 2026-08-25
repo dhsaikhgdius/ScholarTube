@@ -35,7 +35,7 @@ function useMediaQuery(query) {
 export default function App() {
   const params = new URLSearchParams(window.location.search)
   const [query, setQuery] = useState(() => params.get('q') || '')
-  const [format, setFormat] = useState(() => ['Interview', 'Course', 'Talk'].includes(params.get('format')) ? params.get('format') : 'All')
+  const [format, setFormat] = useState(() => ['Interview', 'Podcast', 'Course', 'Talk'].includes(params.get('format')) ? params.get('format') : 'All')
   const [focus, setFocus] = useState(() => ['World Model', 'Agent', 'Vision', 'Robotics', 'Other', 'How to Research'].includes(params.get('focus')) ? params.get('focus') : 'All')
   const [workspaceResource, setWorkspaceResource] = useState(null)
   const isMobile = useMediaQuery('(max-width: 600px)')

@@ -120,6 +120,10 @@ img { display: block; max-width: 100%; }
 .section-kicker { margin: 0 0 10px; color: var(--red); font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: .13em; text-transform: uppercase; }
 .section-heading h2, .curation-intro h2, .contribute-intro h2 { margin: 0; font-size: clamp(38px, 4vw, 60px); line-height: 1.02; letter-spacing: -.055em; }
 .section-heading--row > p { max-width: 470px; margin: 0; color: var(--muted); font-size: 16px; }
+.library-intro { display: grid; gap: 7px; margin-top: 34px; padding: 20px 22px 18px; border: 1px solid var(--line); border-left: 3px solid var(--red); background: #fafaf8; }
+.library-intro__title { margin: 0; font-size: 19px; letter-spacing: -.02em; }
+.library-intro__copy { max-width: 760px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
+.library-intro__count { margin: 3px 0 0; color: #555; font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
 .library-controls { margin-top: 44px; border-top: 1px solid var(--line); }
 .library-search { height: 64px; display: flex; align-items: center; gap: 14px; border-bottom: 1px solid var(--line); }
 .library-search svg { width: 23px; }
@@ -213,6 +217,7 @@ img { display: block; max-width: 100%; }
 .topic-filters > div { display: flex; flex-wrap: wrap; gap: 6px; }
 .topic-filters button { border: 1px solid var(--line); border-radius: 99px; padding: 7px 10px; background: #fff; color: #555; font-size: 12px; font-weight: 650; cursor: pointer; }
 .topic-filters button:hover, .topic-filters button.is-active { border-color: var(--red); background: #fff2f1; color: #b40f0f; }
+.show-filters button { max-width: 280px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 .view-switcher { display: inline-flex; overflow: hidden; border: 1px solid var(--line); border-radius: 4px; }
 .results-bar .view-switcher button { width: 31px; height: 29px; display: grid; place-items: center; border: 0; padding: 0; color: #666; }
 .results-bar .view-switcher button + button { border-left: 1px solid var(--line); }
@@ -385,7 +390,7 @@ img { display: block; max-width: 100%; }
 .direction-main > span { color: var(--muted); font-family: var(--mono); font-size: 11px; line-height: 1.55; }
 .direction-count { font-size: 17px; font-weight: 700; }
 .direction-count small { color: #5a5a5a; font-size: 11px; font-weight: 500; }
-.direction-breakdown { display: grid; grid-template-columns: repeat(3,1fr); gap: 4px; align-items: end; }
+.direction-breakdown { display: grid; grid-template-columns: repeat(4,1fr); gap: 4px; align-items: end; }
 .direction-breakdown i { height: 3px; background: linear-gradient(to right, var(--red) var(--bar), #d5d5d5 var(--bar)); }
 .direction-breakdown i:nth-child(2), .direction-breakdown i:nth-child(3) { background: linear-gradient(to right, var(--ink) var(--bar), #d5d5d5 var(--bar)); }
 .direction-breakdown em { grid-column: 1/-1; margin-top: 4px; font-family: var(--mono); font-size: 11px; font-style: normal; letter-spacing: .1em; }
@@ -556,7 +561,10 @@ img { display: block; max-width: 100%; }
   .scholartuber-directory__toggle { align-items: flex-start; flex-direction: column; gap: 6px; padding-block: 16px; }
   .scholartuber-directory__toggle:hover, .scholartuber-directory__toggle:focus-visible { padding: 16px 10px; }
   .library-controls { margin-top: 28px; }
+  .library-intro { padding: 16px 16px 14px; }
+  .library-intro__title { font-size: 17px; }
   .format-tabs { gap: 0; justify-content: space-between; }
+  .format-tabs button { padding: 0 2px; font-size: 13px; }
   .direction-filters { display: grid; grid-template-columns: repeat(2, 1fr); width: 100%; }
   .direction-filters button:first-child { grid-column: 1/-1; }
   .direction-filters button:last-child { grid-column: 1/-1; }

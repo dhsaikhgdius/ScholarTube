@@ -4,6 +4,7 @@ import { MenuIcon, SearchIcon } from '../icons'
 
 const formatLinks = [
   ['Interviews', 'Interview'],
+  ['Podcasts', 'Podcast'],
   ['Courses', 'Course'],
   ['Talks', 'Talk'],
 ]
