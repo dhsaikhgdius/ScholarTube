@@ -9,11 +9,14 @@ import Contribute from './components/Contribute'
 import Footer from './components/Footer'
 import FeaturedCarousel from './components/FeaturedCarousel'
 import ScholarTubers from './components/ScholarTubers'
+import PodcastShows from './components/PodcastShows'
 import LearningWorkbench from './components/LearningWorkbench'
 import ResourceDetail from './components/ResourceDetail'
 import { useLearningWorkspace } from './learning-workspace'
 
-const FEATURED_IDS = ['ST-008', 'ST-175', 'ST-354', 'ST-083', 'ST-344']
+// ST-001 (Karpathy on Lex Fridman) and ST-942 (Saining Xie marathon on 张小珺 Podcast)
+// keep flagship podcasts in the featured rotation alongside a talk, course, and interview.
+const FEATURED_IDS = ['ST-008', 'ST-001', 'ST-175', 'ST-083', 'ST-942']
 const featuredResources = FEATURED_IDS.map((id) => resources.find((resource) => resource.id === id)).filter(Boolean)
 
 function useMediaQuery(query) {
@@ -106,6 +109,7 @@ export default function App() {
             <div className="shell"><FeaturedCarousel resources={featuredResources} totalCount={resources.length} /></div>
           </section>
         ) : null}
+        <PodcastShows resources={resources} onExplore={exploreScholarTuber} />
         <ScholarTubers resources={resources} onExplore={exploreScholarTuber} />
         <Directions setFocus={setFocus} resources={resources} />
         <Curation />

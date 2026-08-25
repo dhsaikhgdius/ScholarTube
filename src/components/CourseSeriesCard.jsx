@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { ExternalIcon, PlayIcon } from '../icons'
 import { formatDuration, formatViews, getCoverTheme, getDisplayTopic, getThumbnail } from '../resource-utils'
+import { isPodcastResource } from '../resource-detail-utils'
 
 function uniqueValues(resources, field) {
   return [...new Set(resources.map((resource) => resource[field]).filter(Boolean))]
@@ -18,9 +19,12 @@ export default function CourseSeriesCard({ series, index, onOpen }) {
   const languages = uniqueValues(series.resources, 'language')
   const sections = uniqueValues(series.resources, 'section')
   const focusAreas = [...new Set(series.resources.map(getDisplayTopic))]
+  const isPodcast = series.resources.some(isPodcastResource)
   const sourceLabel = channels.length === 1 ? channels[0] : `${channels.length} publishers`
-  const videoLabel = `${series.resources.length} ${series.resources.length === 1 ? 'video' : 'videos'}`
-  const seriesLabel = sections.length === 1 ? `${sections[0]} series` : 'Program series'
+  const videoLabel = isPodcast
+    ? `${series.resources.length} ${series.resources.length === 1 ? 'episode' : 'episodes'}`
+    : `${series.resources.length} ${series.resources.length === 1 ? 'video' : 'videos'}`
+  const seriesLabel = isPodcast ? 'Podcast series' : sections.length === 1 ? `${sections[0]} series` : 'Program series'
 
   return (
     <article className="resource-card series-card">

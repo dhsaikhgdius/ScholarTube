@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { ArrowIcon, BookmarkIcon, ListIcon, QueueIcon, SearchIcon, TreeIcon } from '../icons'
 import { buildLearningPath, PATH_GOALS, prerequisiteNodes, searchStudyRecords, topResearchers } from '../learning-utils'
 import { formatDuration } from '../resource-utils'
+import { isPodcastResource } from '../resource-detail-utils'
 import PathGraph from './PathGraph'
 
 const progressOptions = [
@@ -176,7 +177,7 @@ export default function LearningWorkbench({ resources, workspace, actions, onOpe
 function NextStep({ next, workspace, actions, onOpen }) {
   if (!next) return null
   const isSaved = workspace.saved.includes(next.id)
-  return <section className="next-step"><p className="mini-label">Continue with</p><h3>{next.title}</h3><p className="next-step__meta">{next.speaker} · {formatDuration(next.durationMinutes)}</p><p>{workspace.progress[next.id] === 'in-progress' ? 'Pick up the resource already in motion.' : `A high-signal step that fits your ${workspace.goal.minutes}-minute study session.`}</p><div className="next-step__actions"><button type="button" className="button button--primary" onClick={() => onOpen(next)}>Open resource <ArrowIcon /></button><button type="button" className={isSaved ? 'next-step__save is-active' : 'next-step__save'} aria-label={`${isSaved ? 'Remove' : 'Save'} ${next.title}`} aria-pressed={isSaved} onClick={() => actions.toggleSaved(next.id)}><BookmarkIcon /><span>{isSaved ? 'Saved' : 'Save'}</span></button></div></section>
+  return <section className="next-step"><p className="mini-label">Continue with</p><h3>{next.title}</h3><p className="next-step__meta">{next.speaker} · {formatDuration(next.durationMinutes)}</p><p>{workspace.progress[next.id] === 'in-progress' ? 'Pick up the resource already in motion.' : isPodcastResource(next) ? 'A long-form conversation: start it in this session, keep timestamps, and resume where the reasoning got interesting.' : `A high-signal step that fits your ${workspace.goal.minutes}-minute study session.`}</p><div className="next-step__actions"><button type="button" className="button button--primary" onClick={() => onOpen(next)}>Open resource <ArrowIcon /></button><button type="button" className={isSaved ? 'next-step__save is-active' : 'next-step__save'} aria-label={`${isSaved ? 'Remove' : 'Save'} ${next.title}`} aria-pressed={isSaved} onClick={() => actions.toggleSaved(next.id)}><BookmarkIcon /><span>{isSaved ? 'Saved' : 'Save'}</span></button></div></section>
 }
 
 function Collection({ title, resources, empty, action, icon, onOpen, onRemove, onBrowse }) {
