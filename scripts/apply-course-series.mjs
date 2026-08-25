@@ -387,13 +387,15 @@ const interviewSeriesDefinitions = [
   {
     id: 'zhang-xiaojun-business-interviews',
     title: '张小珺商业访谈录',
-    test: (resource) => resource.channel === '张小珺商业访谈录',
+    // The same show publishes on Bilibili as 张小珺商业访谈录 and on YouTube as 张小珺 Podcast.
+    test: (resource) => resource.channel === '张小珺商业访谈录' || resource.channel === '张小珺 Podcast',
     order: publishedOrder,
   },
   {
     id: 'wei-shijie-mantan-podcast',
     title: '卫诗婕｜漫谈播客集',
-    test: (resource) => resource.channel === '卫诗婕_漫谈播客集',
+    // The channel was renamed from 卫诗婕_漫谈播客集 to 卫诗婕_漫谈Light the Star.
+    test: (resource) => resource.channel === '卫诗婕_漫谈播客集' || resource.channel === '卫诗婕_漫谈Light the Star',
     order: publishedOrder,
   },
   {
@@ -415,6 +417,79 @@ const interviewSeriesDefinitions = [
     order: publishedOrder,
   },
   {
+    id: 'sequoia-training-data',
+    title: 'Training Data — Sequoia Capital',
+    test: (resource) => resource.channel === 'Sequoia Capital',
+    order: publishedOrder,
+  },
+  {
+    id: 'a16z-ai-interviews',
+    title: 'a16z AI Interviews',
+    test: (resource) => resource.channel === 'a16z',
+    order: publishedOrder,
+  },
+  {
+    id: 'cognitive-revolution-podcast',
+    title: 'The Cognitive Revolution Podcast',
+    test: (resource) => resource.channel === 'Cognitive Revolution "How AI Changes Everything"',
+    order: publishedOrder,
+  },
+  {
+    id: 'google-deepmind-podcast',
+    title: 'Google DeepMind: The Podcast',
+    test: (resource) => resource.channel === 'Google DeepMind',
+    order: publishedOrder,
+  },
+  {
+    id: 'the-gradient-podcast',
+    title: 'The Gradient Podcast',
+    test: (resource) => resource.channel === 'The Gradient',
+    order: publishedOrder,
+  },
+  {
+    id: 'eighty-thousand-hours-podcast',
+    title: 'The 80,000 Hours Podcast',
+    test: (resource) => resource.channel === '80,000 Hours',
+    order: publishedOrder,
+  },
+  {
+    id: 'y-combinator-ai-interviews',
+    title: 'Y Combinator AI Interviews',
+    test: (resource) => resource.channel === 'Y Combinator',
+    order: publishedOrder,
+  },
+  {
+    id: 'hugging-face-podcast',
+    title: 'Hugging Face Podcast & ML Club',
+    test: (resource) => resource.channel === 'Hugging Face',
+    order: publishedOrder,
+  },
+  {
+    id: 'nvidia-ai-podcast',
+    title: 'NVIDIA AI Podcast & Official Interviews',
+    test: (resource) => resource.channel === 'NVIDIA',
+    order: publishedOrder,
+  },
+  {
+    // The channel label varies between episodes (e.g. a co-branded NVIDIA episode).
+    id: 'mad-podcast',
+    title: 'The MAD Podcast with Matt Turck',
+    test: (resource) => resource.channel.startsWith('The MAD Podcast with Matt Turck'),
+    order: publishedOrder,
+  },
+  {
+    id: 'silicon-based-chatroom',
+    title: '硅基聊天室',
+    test: (resource) => resource.channel === '硅基聊天室',
+    order: publishedOrder,
+  },
+  {
+    id: 'whynottv-podcast',
+    title: 'WhynotTV Podcast',
+    test: (resource) => resource.channel === 'WhynotTV',
+    order: publishedOrder,
+  },
+  {
     id: 'stanford-medicine-ai-life-sciences-symposium',
     title: 'Stanford Medicine AI in Life Sciences Symposium',
     test: (resource) => resource.channel === 'Stanford Medicine' && /AI in Life Sciences Symposium/i.test(resource.title),
@@ -433,9 +508,11 @@ const interviewSeriesDefinitions = [
     order: publishedOrder,
   },
   {
+    // Interview rows on the exact 'Google DeepMind' channel belong to the
+    // podcast series above; this catches co-branded channels only.
     id: 'google-deepmind-conversations',
     title: 'Google DeepMind: Conversations & Research Films',
-    test: (resource) => resource.channel.startsWith('Google DeepMind'),
+    test: (resource) => resource.channel.startsWith('Google DeepMind') && resource.channel !== 'Google DeepMind',
     order: publishedOrder,
   },
 ]
