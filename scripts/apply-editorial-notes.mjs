@@ -200,7 +200,13 @@ for (const resource of resources) {
     regenerated += 1
     continue
   }
-  if (current && !boilerplateNotes.has(current)) {
+  const generatedShape =
+    /(Core selection|Recommended pick|Reserve item|Catalog entry)( for the .+ shelf| in the ScholarTube catalog)/.test(
+      current,
+    )
+  // Hygiene may change speaker/format/domain/tier; rewrite generated notes
+  // so they stay field-driven, but never touch handwritten ones.
+  if (current && !boilerplateNotes.has(current) && !generatedShape) {
     untouched += 1
     continue
   }
