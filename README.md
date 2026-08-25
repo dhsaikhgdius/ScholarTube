@@ -74,7 +74,7 @@ The web interface is built for both focused retrieval and open-ended exploration
 - Filters for format, research direction, broader topic, language, platform (including official course sites), and duration.
 - Curated, popularity, and duration-based sorting.
 - Grid and compact-list views with paginated results.
-- Explicit course and interview series, with ordered episode-level detail.
+- Explicit course, talk, and interview series, with ordered episode-level detail.
 - Resource detail panels showing audience, rationale, provenance, dates, metadata status, and view-count snapshots.
 - ScholarTuber profiles for exploring researchers, educators, builders, and interviewers represented in the index.
 - One-click export of the current result set to Markdown or CSV.
@@ -163,10 +163,13 @@ Open the local URL printed by Vite, normally `http://127.0.0.1:5173/`.
 | `npm run dev` | Start the local development server |
 | `npm run build` | Build the Vite application and publish a self-contained root `index.html` |
 | `npm run preview` | Preview the production build locally |
-| `npm run series:apply` | Recompute explicit course and interview series metadata |
+| `npm run series:apply` | Recompute explicit course, talk, and interview series metadata |
+| `npm run taxonomy:apply` | Apply the evidence-backed section/focusArea corrections |
+| `npm run notes:apply` | Replace provenance boilerplate in `notes` with field-driven editorial notes |
+| `npm run curation:apply` | Run taxonomy, series, and notes maintenance in the correct order |
 | `npm run verify:metadata` | Recheck supported platform metadata and rewrite the verification artifacts |
 
-The two maintenance commands modify canonical data files. Review their output and diff before committing the result. Metadata verification also requires network access to the relevant public platforms.
+The maintenance commands modify canonical data files. Review their output and diff before committing the result. Metadata verification also requires network access to the relevant public platforms.
 
 ## Deployment
 
