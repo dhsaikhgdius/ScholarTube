@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { CloseIcon, ExternalIcon } from '../icons'
 import { formatDuration, getThumbnail } from '../resource-utils'
+import { buildSeriesIntro, isPodcastResource } from '../resource-detail-utils'
 
 function uniqueValues(resources, field) {
   return [...new Set(resources.map((resource) => resource[field]).filter(Boolean))]
@@ -16,10 +17,14 @@ export default function CourseSeriesDetail({ series, onClose }) {
   const directions = uniqueValues(series.resources, 'focusArea')
   const channels = uniqueValues(series.resources, 'channel')
   const sections = uniqueValues(series.resources, 'section')
-  const videoLabel = `${series.resources.length} ${series.resources.length === 1 ? 'video' : 'videos'}`
+  const isPodcast = series.resources.some(isPodcastResource)
+  const videoLabel = isPodcast
+    ? `${series.resources.length} ${series.resources.length === 1 ? 'episode' : 'episodes'}`
+    : `${series.resources.length} ${series.resources.length === 1 ? 'video' : 'videos'}`
   const isCourse = sections.length === 1 && sections[0] === 'Course'
-  const isInterview = sections.length === 1 && sections[0] === 'Interview'
-  const seriesLabel = sections.length === 1 ? `${sections[0]} series` : 'Program series'
+  const isInterview = !isPodcast && sections.length === 1 && sections[0] === 'Interview'
+  const seriesLabel = isPodcast ? 'Podcast series' : sections.length === 1 ? `${sections[0]} series` : 'Program series'
+  const seriesIntro = buildSeriesIntro(series)
 
   useEffect(() => {
     const previousOverflow = document.body.style.overflow
@@ -62,22 +67,31 @@ export default function CourseSeriesDetail({ series, onClose }) {
           <h2 id="series-detail-title">{series.title}</h2>
           <p className="resource-detail__byline">{channels.join(' / ')}</p>
 
+          <div className="series-intro">
+            <p className="resource-detail__label">{isPodcast ? 'About this show' : 'About this series'}</p>
+            <p>{seriesIntro}</p>
+          </div>
+
           <div className="resource-detail__summary">
             <article>
-              <p className="resource-detail__label">{isCourse ? 'One course, one place' : 'One program, one place'}</p>
+              <p className="resource-detail__label">{isCourse ? 'One course, one place' : isPodcast ? 'One show, one place' : 'One program, one place'}</p>
               <p>{isCourse
                 ? 'Lectures from the same course are grouped here while each canonical video link and its metadata remain intact.'
-                : isInterview
-                  ? 'Episodes from the same interview program are grouped here while each canonical video link and its metadata remain intact.'
-                  : 'Interviews and technical tutorials from the same program are grouped here while each canonical video link and its metadata remain intact.'}</p>
+                : isPodcast
+                  ? 'Episodes of the same show are grouped here while each canonical upload and its verified metadata remain intact.'
+                  : isInterview
+                    ? 'Episodes from the same interview program are grouped here while each canonical video link and its metadata remain intact.'
+                    : 'Interviews and technical tutorials from the same program are grouped here while each canonical video link and its metadata remain intact.'}</p>
             </article>
             <article>
               <p className="resource-detail__label">How to use it</p>
               <p>{isCourse
                 ? 'Follow the listed sequence for structured study, or open the lecture that matches the topic you need.'
-                : isInterview
-                  ? 'Browse the conversations in publication order, or open the episode with the guest and topic you need.'
-                  : 'Browse every video in publication order, or filter the library to see only its interviews or tutorials.'}</p>
+                : isPodcast
+                  ? 'Pick the episode whose guest matches your research question; long conversations reward timestamped notes over background listening.'
+                  : isInterview
+                    ? 'Browse the conversations in publication order, or open the episode with the guest and topic you need.'
+                    : 'Browse every video in publication order, or filter the library to see only its interviews or tutorials.'}</p>
             </article>
           </div>
 
@@ -90,7 +104,7 @@ export default function CourseSeriesDetail({ series, onClose }) {
           </dl>
 
           <div className="series-detail__episodes">
-            <p className="resource-detail__label">{isCourse ? 'Lectures in this series' : isInterview ? 'Episodes in this series' : 'Videos in this series'}</p>
+            <p className="resource-detail__label">{isCourse ? 'Lectures in this series' : isPodcast ? 'Episodes in this show' : isInterview ? 'Episodes in this series' : 'Videos in this series'}</p>
             <ol>
               {series.resources.map((resource, index) => (
                 <li key={resource.id}>
