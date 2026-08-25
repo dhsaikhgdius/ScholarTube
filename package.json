@@ -13,6 +13,7 @@
     "notes:apply": "node scripts/apply-editorial-notes.mjs",
     "curation:apply": "npm run taxonomy:apply && npm run series:apply && npm run notes:apply",
     "test:detail": "node scripts/test-resource-detail.mjs",
+    "test:paths": "node scripts/test-learning-paths.mjs",
     "verify:metadata": "node scripts/verify-resource-metadata.mjs",
     "data:add-2026-08-25": "node scripts/add-world-models-research-craft-2026-08-25.mjs"
   },
