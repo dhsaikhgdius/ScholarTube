@@ -20,10 +20,10 @@ export default function CourseSeriesCard({ series, index, onOpen }) {
   const sections = uniqueValues(series.resources, 'section')
   const focusAreas = [...new Set(series.resources.map(getDisplayTopic))]
   const isPodcast = series.resources.some(isPodcastResource)
+  const isCourse = !isPodcast && sections.length === 1 && sections[0] === 'Course'
   const sourceLabel = channels.length === 1 ? channels[0] : `${channels.length} publishers`
-  const videoLabel = isPodcast
-    ? `${series.resources.length} ${series.resources.length === 1 ? 'episode' : 'episodes'}`
-    : `${series.resources.length} ${series.resources.length === 1 ? 'video' : 'videos'}`
+  const episodeWord = isPodcast ? 'episode' : isCourse ? 'lecture' : 'video'
+  const videoLabel = `${series.resources.length} ${series.resources.length === 1 ? episodeWord : `${episodeWord}s`}`
   const seriesLabel = isPodcast ? 'Podcast series' : sections.length === 1 ? `${sections[0]} series` : 'Program series'
 
   return (
@@ -67,7 +67,7 @@ export default function CourseSeriesCard({ series, index, onOpen }) {
           href={sourceResource.url}
           target="_blank"
           rel="noreferrer"
-          aria-label={`Watch the first video in ${series.title} at source`}
+          aria-label={`Watch the first ${episodeWord} in ${series.title} on its canonical host`}
         >
           Watch at source <ExternalIcon />
         </a>

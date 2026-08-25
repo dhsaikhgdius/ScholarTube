@@ -100,7 +100,7 @@ function getLibraryIntro(format, focus) {
   if (focusIntro) return focusIntro
   return {
     title: 'The full index',
-    copy: 'Every interview, podcast, course, and talk in the index, ordered by curation tier. Pick a format tab or a research direction to narrow the slice.',
+    copy: 'Every interview, podcast, course, and talk in the collection — Core selections first, lecture and episode series grouped into single entries, every link kept on its canonical host. Pick a format tab or a research direction to narrow the slice.',
   }
 }
 
@@ -521,9 +521,9 @@ export default function Library({ resources, query, setQuery, format, setFormat,
           </div>
           <div className="research-mode" aria-label="Researcher mode filters">
             <span>Researcher mode</span>
-            <button type="button" className={researchOnly ? 'is-active' : ''} onClick={() => setResearchOnly((value) => !value)}>Core only</button>
-            <button type="button" className={tierAOnly ? 'is-active' : ''} onClick={() => setTierAOnly((value) => !value)}>Tier A</button>
-            <button type="button" className={subtitleOnly ? 'is-active' : ''} onClick={() => setSubtitleOnly((value) => !value)}>Subtitles</button>
+            <button type="button" className={researchOnly ? 'is-active' : ''} aria-pressed={researchOnly} title="Only Core recommendations — the suggested starting points" onClick={() => setResearchOnly((value) => !value)}>Core only</button>
+            <button type="button" className={tierAOnly ? 'is-active' : ''} aria-pressed={tierAOnly} title="Only Tier A sources — original and official uploads" onClick={() => setTierAOnly((value) => !value)}>Tier A</button>
+            <button type="button" className={subtitleOnly ? 'is-active' : ''} aria-pressed={subtitleOnly} title="Only recordings with verified subtitles" onClick={() => setSubtitleOnly((value) => !value)}>Subtitles</button>
           </div>
         </div>
 
@@ -536,10 +536,10 @@ export default function Library({ resources, query, setQuery, format, setFormat,
             {(query || format !== 'All' || focus !== 'All' || broaderTopic !== 'All' || podcastShow !== 'All' || language !== 'All' || platform !== 'All' || duration !== 'All' || researchOnly || tierAOnly || subtitleOnly) && (
               <button type="button" onClick={resetFilters}>Clear filters</button>
             )}
-            <button type="button" onClick={() => exportMarkdown(filtered)} disabled={!filtered.length} aria-label={`Export ${filtered.length} results as Markdown`}>
+            <button type="button" onClick={() => exportMarkdown(filtered)} disabled={!filtered.length} aria-label={`Export ${filtered.length} results as Markdown`} title="Download the current results as a Markdown reading list with source links">
               <DownloadIcon /> Markdown
             </button>
-            <button type="button" onClick={() => exportCsv(filtered)} disabled={!filtered.length} aria-label={`Export ${filtered.length} results as CSV`}>
+            <button type="button" onClick={() => exportCsv(filtered)} disabled={!filtered.length} aria-label={`Export ${filtered.length} results as CSV`} title="Download the current results as a CSV table for analysis or import">
               <DownloadIcon /> CSV
             </button>
             <span className="view-switcher" aria-label="Results view">
@@ -583,7 +583,7 @@ export default function Library({ resources, query, setQuery, format, setFormat,
           </>
         ) : (
           <div className="empty-state">
-            <p>No resource matches this combination yet.</p>
+            <p>No indexed resource matches this combination. Duration, platform, and the researcher-mode toggles cut deepest — loosen one of those, or start again from the full index.</p>
             <button type="button" onClick={resetFilters}>Reset the index</button>
           </div>
         )}
