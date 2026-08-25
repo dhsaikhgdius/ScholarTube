@@ -8,6 +8,7 @@
     "build": "vite build --base=./ && node scripts/publish-root.mjs",
     "preview": "vite preview",
     "series:apply": "node scripts/apply-course-series.mjs",
+    "test:detail": "node scripts/test-resource-detail.mjs",
     "verify:metadata": "node scripts/verify-resource-metadata.mjs"
   },
   "dependencies": {
