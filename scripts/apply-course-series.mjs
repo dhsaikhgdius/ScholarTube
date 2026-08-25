@@ -32,6 +32,38 @@ function orderedVideoIds(ids) {
   return new Map(ids.map((videoId, index) => [videoId, index + 1]))
 }
 
+// Official Stanford Online playlist order for CS234 Spring 2024 (16 lectures,
+// playlist position == lecture number). An explicit map is needed because the
+// Lecture 9 guest session on DPO carries no "2024" or course-season tag in
+// its title.
+const stanfordCs2342024 = orderedVideoIds([
+  'WsvFL-LjA6U', 'gHdsUUGcBC0', 'jjq51TRNVvk', 'b_wvosA70f8', 'L6OVEmV3NcE',
+  '8PwvNQ5WS-o', '4ngb0IZTg8I', 'IEbuJtjqtMU', 'Q7rl8ovBWwQ', 'F6APGIAm5fw',
+  'sqYii3nd78w', 'gFJNsfg_35E', 'pc7oayCSZmQ', 'UgANzoWc0nc', 'FOlPpjNbHjE',
+  'eenJzay5aLo',
+])
+
+// Andrej Karpathy's official "Neural Networks: Zero to Hero" playlist,
+// excluding the Microsoft-hosted "State of GPT" conference talk. Ordering
+// stays chronological (upload order == playlist order).
+const karpathyZeroToHero = new Set([
+  'VMj-3S1tku0', 'PaCmpygFfXo', 'TCH_1BHY58I', 'P6sfmUTpUmc', 'q8SA3rM6ckI',
+  't3YJ5hKiMQ0', 'kCc8FmEb1nY', 'zduSFxRajkE', 'l8pRSuU81PU',
+])
+
+// Official CMU 11-785 Fall 2025 lecture playlist mapped to lecture numbers.
+// An explicit map is needed because several uploads drop "11-785" or
+// "Fall 2025" from their titles, lectures 5, 7, 14, and 20 were never made
+// public, and the duplicate re-upload of Lecture 9 (vFCeU6IhxDQ) is excluded.
+const cmu11785Fall2025 = new Map(Object.entries({
+  qQtfKayFdfM: 1, 'gUt3rsT5_-8': 2, j0as9k7qnck: 3, OJpR7J8MPgA: 4,
+  'I3BjsU-QukA': 6, '2RdQ7kiJgIo': 8, qt5r69AIIKE: 9, oNu0KCzjc9I: 10,
+  TR_ovddIwCU: 11, bPzYScY3CHM: 12, DHSQ0RYdab8: 13, j78_efCyMxU: 15,
+  '1KRcs8XYUWo': 16, RMBXmlot6Jo: 17, RjI7bGMJZV0: 18, 'oB6Vbk3-Hao': 19,
+  '1EoMZNywIR8': 21, '2MWWkJVF7bQ': 22, mN3c7_E524w: 23, wrwYoiqyn68: 24,
+  B7hu_r3TgP0: 25, 'JVeCYzQAO-E': 26, V4coYgcdIuE: 27, WkLKBkozoII: 28,
+}))
+
 const stanfordCs336Spring2025 = orderedVideoIds([
   'SQ3fZ1sAqXI', 'msHyYioAyNE', 'ptFiH_bHnJw', 'LPv1KfUXLCo', '6OBtO9niT00',
   'E8Mju53VB00', 'l1RJcDjzK8M', 'LHpr5ytssLo', '6Q-ESEmDf4Q', 'fcgPYo3OtV0',
@@ -108,7 +140,8 @@ const courseSeriesDefinitions = [
   {
     id: 'stanford-cs234-2024',
     title: 'Stanford CS234: Reinforcement Learning — 2024',
-    test: (resource) => /stanford cs234/i.test(resource.title) && /\b2024\b/i.test(resource.title),
+    test: (resource) => stanfordCs2342024.has(resource.videoId),
+    order: (resource) => stanfordCs2342024.get(resource.videoId),
   },
   {
     id: 'stanford-cs231n-spring-2025',
@@ -185,7 +218,8 @@ const courseSeriesDefinitions = [
   {
     id: 'cmu-11-785-fall-2025',
     title: 'CMU 11-785: Introduction to Deep Learning — Fall 2025',
-    test: (resource) => /11-785/i.test(resource.title) && publishedYear(resource) === 2025,
+    test: (resource) => cmu11785Fall2025.has(resource.videoId),
+    order: (resource) => cmu11785Fall2025.get(resource.videoId),
   },
   {
     id: 'dive-into-deep-learning-2021',
@@ -280,8 +314,7 @@ const courseSeriesDefinitions = [
   {
     id: 'karpathy-neural-networks-zero-to-hero',
     title: 'Andrej Karpathy: Neural Networks — Zero to Hero',
-    test: (resource) =>
-      resource.channel === 'Andrej Karpathy' && /spelled-out intro|Let's build GPT/i.test(resource.title),
+    test: (resource) => resource.channel === 'Andrej Karpathy' && karpathyZeroToHero.has(resource.videoId),
     order: publishedOrder,
   },
   {
