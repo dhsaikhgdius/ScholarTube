@@ -11,7 +11,8 @@
     "taxonomy:apply": "node scripts/apply-taxonomy-fixes.mjs",
     "notes:apply": "node scripts/apply-editorial-notes.mjs",
     "curation:apply": "npm run taxonomy:apply && npm run series:apply && npm run notes:apply",
-    "verify:metadata": "node scripts/verify-resource-metadata.mjs"
+    "verify:metadata": "node scripts/verify-resource-metadata.mjs",
+    "test:paths": "node scripts/test-learning-paths.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",
