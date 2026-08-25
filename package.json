@@ -11,7 +11,8 @@
     "series:apply": "node scripts/apply-course-series.mjs",
     "taxonomy:apply": "node scripts/apply-taxonomy-fixes.mjs",
     "notes:apply": "node scripts/apply-editorial-notes.mjs",
-    "curation:apply": "npm run taxonomy:apply && npm run series:apply && npm run notes:apply",
+    "hygiene:apply": "node scripts/apply-metadata-hygiene.mjs",
+    "curation:apply": "npm run taxonomy:apply && npm run series:apply && npm run hygiene:apply && npm run notes:apply",
     "test:detail": "node scripts/test-resource-detail.mjs",
     "verify:metadata": "node scripts/verify-resource-metadata.mjs",
     "data:add-2026-08-25": "node scripts/add-world-models-research-craft-2026-08-25.mjs"
