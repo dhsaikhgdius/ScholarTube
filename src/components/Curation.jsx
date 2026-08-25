@@ -2,6 +2,7 @@ const standards = [
   ['01', 'Source fidelity', 'Link to the original host.'],
   ['02', 'Technical value', 'Teach beyond the announcement.'],
   ['03', 'Durable signal', 'Stay useful after the release cycle.'],
+  ['04', 'Podcast selection', 'Researcher guests, long-form, canonical host.'],
 ]
 
 export default function Curation() {

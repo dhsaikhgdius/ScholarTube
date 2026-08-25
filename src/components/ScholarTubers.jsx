@@ -23,6 +23,8 @@ const profileDefinitions = [
   { name: 'Chelsea Finn', role: 'Robot learning researcher', topic: 'Robotics' },
   { name: 'Harrison Chase', role: 'AI agent framework builder', topic: 'Agents' },
   { name: 'Kaiming He', role: 'Computer vision researcher', topic: 'Vision' },
+  { name: 'Pieter Abbeel', role: 'Robot learning researcher & podcast host', topic: 'Robotics' },
+  { name: '张小珺', role: 'Research interviewer & podcast host', topic: 'Long-form interviews' },
 ]
 
 const formatOrder = ['Interview', 'Course', 'Talk']
