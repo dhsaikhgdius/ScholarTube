@@ -1,14 +1,14 @@
 {
   "verifiedOn": "2026-08-25",
-  "total": 1175,
+  "total": 1252,
   "verified": 288,
-  "partial": 887,
+  "partial": 964,
   "failed": 0,
   "byPlatform": {
     "YouTube": {
-      "total": 877,
+      "total": 954,
       "verified": 0,
-      "partial": 877,
+      "partial": 954,
       "failed": 0
     },
     "Bilibili": {
