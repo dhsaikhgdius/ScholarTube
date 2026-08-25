@@ -76,27 +76,27 @@ export default function CourseSeriesDetail({ series, onClose }) {
             <article>
               <p className="resource-detail__label">{isCourse ? 'One course, one place' : isPodcast ? 'One show, one place' : 'One program, one place'}</p>
               <p>{isCourse
-                ? 'Lectures from the same course are grouped here while each canonical video link and its metadata remain intact.'
+                ? 'The full lecture sequence is indexed as a single entry, in teaching order, so the course reads as a course rather than as scattered uploads. Each lecture keeps its canonical video link and verified metadata on the original host.'
                 : isPodcast
-                  ? 'Episodes of the same show are grouped here while each canonical upload and its verified metadata remain intact.'
+                  ? 'Selected episodes of the show are indexed as a single entry so its conversations can be read as a body of work. Each episode keeps its canonical upload — the grouping is an editorial selection, not a feed of everything the show publishes.'
                   : isInterview
-                    ? 'Episodes from the same interview program are grouped here while each canonical video link and its metadata remain intact.'
-                    : 'Interviews and technical tutorials from the same program are grouped here while each canonical video link and its metadata remain intact.'}</p>
+                    ? 'Conversations from the same interview program are indexed as a single entry, ordered by publication, so one interviewer’s line of questioning can be followed across guests. Each episode keeps its canonical video link and verified metadata.'
+                    : 'Recordings from the same program are indexed as a single entry, in publication order, so the venue’s or channel’s output can be compared side by side. Each video keeps its canonical link and verified metadata on the original host.'}</p>
             </article>
             <article>
               <p className="resource-detail__label">How to use it</p>
               <p>{isCourse
-                ? 'Follow the listed sequence for structured study, or open the lecture that matches the topic you need.'
+                ? 'Follow the numbered order to build the subject from first principles, or jump to the lecture that covers the problem in front of you — every entry opens at the source.'
                 : isPodcast
                   ? 'Pick the episode whose guest matches your research question; long conversations reward timestamped notes over background listening.'
                   : isInterview
-                    ? 'Browse the conversations in publication order, or open the episode with the guest and topic you need.'
-                    : 'Browse every video in publication order, or filter the library to see only its interviews or tutorials.'}</p>
+                    ? 'Read the episode list as a map of the program: browse in publication order, or open the conversation whose guest and topic match your question.'
+                    : 'Browse the ordered list for the program’s range, or open the session closest to your question — every entry opens at the source.'}</p>
             </article>
           </div>
 
           <dl className="resource-detail__facts">
-            <div><dt>Videos</dt><dd>{series.resources.length}</dd></div>
+            <div><dt>{isPodcast || isInterview ? 'Episodes' : isCourse ? 'Lectures' : 'Videos'}</dt><dd>{series.resources.length}</dd></div>
             <div><dt>Total runtime</dt><dd>{formatDuration(totalDuration)}</dd></div>
             <div><dt>Platform</dt><dd>{platforms.join(' + ')}</dd></div>
             <div><dt>Language</dt><dd>{languages.join(' + ')}</dd></div>
