@@ -10,7 +10,8 @@
     "series:apply": "node scripts/apply-course-series.mjs",
     "taxonomy:apply": "node scripts/apply-taxonomy-fixes.mjs",
     "notes:apply": "node scripts/apply-editorial-notes.mjs",
-    "curation:apply": "npm run taxonomy:apply && npm run series:apply && npm run notes:apply",
+    "hygiene:apply": "node scripts/apply-metadata-hygiene.mjs",
+    "curation:apply": "npm run taxonomy:apply && npm run series:apply && npm run hygiene:apply && npm run notes:apply",
     "verify:metadata": "node scripts/verify-resource-metadata.mjs"
   },
   "dependencies": {
