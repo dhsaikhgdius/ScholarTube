@@ -508,9 +508,11 @@ const interviewSeriesDefinitions = [
     order: publishedOrder,
   },
   {
+    // Interview rows on the exact 'Google DeepMind' channel belong to the
+    // podcast series above; this catches co-branded channels only.
     id: 'google-deepmind-conversations',
     title: 'Google DeepMind: Conversations & Research Films',
-    test: (resource) => resource.channel.startsWith('Google DeepMind'),
+    test: (resource) => resource.channel.startsWith('Google DeepMind') && resource.channel !== 'Google DeepMind',
     order: publishedOrder,
   },
 ]
